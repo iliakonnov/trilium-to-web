@@ -1,0 +1,187 @@
+@import './trilium.css';
+
+body {
+    font-family: sans;
+}
+
+/* Sidebar */
+
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 300px;
+    box-sizing: border-box;
+    background-color: #fafafa;
+    color: #000000;
+    transition: transform 0.3s; /* Animation: slide away */
+}
+
+.sidebar-toggle .sidebar {
+    transform: translateX(-300px);
+}
+@media (max-width: 620px) {
+    .sidebar {
+        transform: translateX(-300px);
+    }
+    .sidebar-toggle .sidebar {
+        transform: none;
+    }
+}
+
+.sidebar .sidebar-scrollbox {
+    overflow-y: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px 10px;
+}
+
+/* Sidebar items */
+.sidebar {
+    list-style: none outside none;
+    padding-left: 0;
+}
+
+.sidebar ul {
+    margin: 0;
+    padding: 0 1em;
+}
+
+.sidebar li {
+    /*list-style: none;*/
+    color: #aaaaaa;
+    padding-top: 10px;
+}
+.sidebar li a {
+    padding: 0;
+    text-decoration: none;
+    color: #000000;
+}
+
+.sidebar li a:hover {
+    color: #1f1fff;
+}
+.sidebar li span.active a {
+    color: #1f1fff;
+}
+
+
+@media (-moz-touch-enabled: 1), (pointer: coarse) {
+    .sidebar li a { padding: 5px 0; }
+    .spacer { margin: 10px 0; }
+}
+
+/* Top title */
+
+.topbar {
+    position: sticky;
+    top: 0px;
+    background-color: #ffffff;
+    z-index: 100;
+    text-align: center;
+    line-height: 50px;
+    border-bottom-color: hsl(0, 0%, 95%);
+    border-bottom-style: solid;
+    border-bottom-width: thin;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.topbar h1 {
+    flex: 1;
+    margin: 0;
+}
+
+#sidebar-toggle {
+    left: 0px;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+#sidebar-toggle rect {
+    fill: #747474;
+}
+
+#sidebar-toggle:hover rect {
+    fill: #000000;
+}
+
+/* Page content */
+.content-wrapper {
+    box-sizing: border-box;
+    transition: margin-left 0.3s ease, transform 0.3s ease; /* Animation: slide away */
+}
+
+.content-wrapper {
+    margin-left: 300px;
+}
+.sidebar-toggle .content-wrapper {
+    margin-left: 0px;
+}
+@media (max-width: 620px) {
+    .content-wrapper {
+        transform: none;
+        margin-left: 0px;
+    }
+    .sidebar-toggle .content-wrapper {
+        transform: translateX(300px);
+    }
+}
+
+.ck-content {
+    padding: 15px;
+    font-family: "Linux Libertine", serif;
+    font-size: 13pt;
+}
+
+code {
+    font-size: 11pt
+}
+
+@media print {
+    .sidebar,
+    .topbar {
+        display: none;
+    }
+    
+    .content-wrapper {
+        transform: none;
+        margin-left: 0px;
+        overflow-y: initial;
+        margin: 0;
+    }
+
+    .ck-content {
+        padding: 0;
+    }
+
+    a, a:visited, a:active, a:hover {
+        color: #4183c4;
+        text-decoration: none;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+        page-break-inside: avoid;
+        page-break-after: avoid;
+    }
+    
+    pre, code {
+        page-break-inside: avoid;
+        white-space
+    }
+}
+
+/* KaTeX */
+.katex-display {
+    margin-left: 3em;
+    text-align: unset;
+}
+
+.katex-display>.katex {
+    text-align: unset;
+}

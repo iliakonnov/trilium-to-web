@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{title}</title>
+
+    <!-- Beautiful fonts -->
+    <link href="https://rawcdn.githack.com/iliakonnov/linlibertine/718d3ae934bec3bb1cb173af93ad22a42362c266/linlibertine.css" rel="stylesheet">
+
+    <!-- KaTeX -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
+    <!-- Some css files -->
+    <link rel='stylesheet' href='{home}/static/style.css'/>
+    <script defer src="{home}/static/script.js"></script>
+</head>
+<body>
+    <nav class="sidebar">
+        <div class="sidebar-scrollbox">
+            {sidebar}
+        </div>
+        <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+    </nav>
+    <div class="content-wrapper">
+        <nav class="topbar">
+            <button id="sidebar-toggle" type="button" onclick="document.documentElement.classList.toggle('sidebar-toggle')">
+                <svg viewBox="0 0 120 96" width="20px" height="20px">
+                    <rect width="100" height="15" rx="15" ry="15"></rect>
+                    <rect y="30" width="100" height="15" rx="15" ry="15"></rect>
+                    <rect y="60" width="100" height="15" rx="15" ry="15"></rect>
+                </svg>
+            </button>
+            <h1>{title}</h1>
+        </nav>
+        <div class="ck-content">
+            {content}
+        </div>
+    </div>
+</body>
+</html>
